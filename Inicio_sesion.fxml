@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="340.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.FXMLInicio_sesion">
+    <children>
+      <AnchorPane>
+         <children>
+            <Label layoutX="240.0" layoutY="254.0" prefHeight="76.0" prefWidth="78.0" text="fondo">
+               <effect>
+                  <ColorInput height="94.88" paint="#e7f1ec" width="85.99" />
+               </effect>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label prefHeight="76.0" prefWidth="122.0" text="fondo">
+               <effect>
+                  <ColorInput height="255.0" width="255.0">
+                     <paint>
+                        <LinearGradient endX="0.19999999999999996" endY="1.0" startX="0.1523809523809524" startY="0.09047619047619047">
+                           <stops>
+                              <Stop color="#466d91" />
+                              <Stop color="#466d91" offset="0.007662835249042145" />
+                              <Stop color="#5c7ea0" offset="0.09578544061302675" />
+                              <Stop color="#f2eded" offset="0.42528735632183906" />
+                              <Stop color="#e7f1ec" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </paint>
+                  </ColorInput>
+               </effect>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label fx:id="ventana" layoutY="254.0" prefHeight="76.0" prefWidth="122.0" text="no_principal">
+               <effect>
+                  <ColorInput height="94.88" paint="#e7f1ec" width="255.0" />
+               </effect>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" prefHeight="76.0" prefWidth="122.0" text="fondo">
+               <effect>
+                  <ColorInput height="255.0" width="255.0">
+                     <paint>
+                        <LinearGradient endX="0.19999999999999996" endY="1.0" startX="0.1523809523809524" startY="0.07619047619047618">
+                           <stops>
+                              <Stop color="#466d91" />
+                              <Stop color="#466d91" offset="0.007662835249042145" />
+                              <Stop color="#5c7ea0" offset="0.09578544061302675" />
+                              <Stop color="#f2eded" offset="0.42528735632183906" />
+                              <Stop color="#e7f1ec" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </paint>
+                  </ColorInput>
+               </effect>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="7.0" layoutY="107.0" prefHeight="119.0" prefWidth="304.0" style="-fx-background-radius: 0 0 18 18; -fx-border-radius: 0 0 18 18; -fx-background-color: linear-gradient(#edf8fa 0%, #dcf1ee 20%, #d0e3d9 71%, #d0dae3 100%);" />
+        <Button fx:id="aceptar" alignment="BASELINE_CENTER" contentDisplay="TOP" layoutX="240.0" layoutY="292.0" onAction="#handleButtonIniciar" style="-fx-background-color: #458f6a;" text="Iniciar" textFill="WHITE">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="Candara Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelar" alignment="BASELINE_CENTER" cancelButton="true" contentDisplay="TOP" layoutX="167.0" layoutY="292.0" onAction="#handleButtonCancelar" mnemonicParsing="false" style="-fx-background-color: #454594;" text="Cancelar" textFill="WHITE">
+         <font>
+            <Font name="Candara Bold" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Label layoutX="27.0" layoutY="26.0" text="Inicio de sesión" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="19.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="contrasena" layoutX="120.0" layoutY="182.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="usuario" layoutX="120.0" layoutY="121.0" prefHeight="25.0" prefWidth="182.0" />
+      <Label layoutX="47.0" layoutY="122.0" text="usuario">
+         <font>
+            <Font name="Leelawadee" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="183.0" text="contraseña">
+         <font>
+            <Font name="Leelawadee" size="20.0" />
+         </font>
+      </Label>
+    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>

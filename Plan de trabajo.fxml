@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="tpPlanTrabajo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.FXMLDocumentController">
+  <tabs>
+    <Tab fx:id="tabPDT" text="Objetivo General">
+      <content>
+        <AnchorPane fx:id="TPlan" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtObjGeneral" alignment="TOP_LEFT" layoutX="21.0" layoutY="249.0" prefHeight="83.0" prefWidth="439.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Label layoutX="21.0" layoutY="232.0" text="7. OBJETIVO GENERAL:" />
+                  <TextField fx:id="tfNomCA" editable="false" layoutX="196.0" layoutY="165.0" prefHeight="25.0" prefWidth="384.0" />
+                  <TextField fx:id="tfNomAcad2" editable="false" layoutX="183.0" layoutY="134.0" prefHeight="25.0" prefWidth="384.0" />
+                  <TextField fx:id="tfPeriodo" editable="false" layoutX="137.0" layoutY="103.0" prefHeight="25.0" prefWidth="384.0" />
+                  <TextField fx:id="tfFechaAp" layoutX="173.0" layoutY="42.0" prefHeight="25.0" prefWidth="411.0" />
+                  <Label layoutX="15.0" layoutY="200.0" text="6. MIEMBROS DE LA ACADEMIA QUE PARTICIPARON:" AnchorPane.leftAnchor="20.0" />
+                  <Label layoutX="19.0" layoutY="169.0" text="5. NOMBRE DEL COORDINADOR:" />
+                  <Label layoutX="19.0" layoutY="138.0" text="4. NOMBRE DE LA ACADEMIA:" />
+                  <Label layoutX="19.0" layoutY="107.0" text="3. PERIODO ESCOLAR:" />
+                  <Label layoutX="20.0" layoutY="79.0" text="2. PROGRAMA EDUCATIVO:" />
+                  <Label layoutX="14.0" layoutY="46.0" text="1. FECHA DE APROVACION:" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="433.0" />
+                  <TextField fx:id="tfNomAcad" editable="false" layoutX="273.0" layoutY="10.0" prefHeight="25.0" prefWidth="256.0" />
+                  <Label layoutX="78.0" layoutY="14.0" text="PLAN DE TRABAJO DE ACADEMIA:" />
+                  <ComboBox fx:id="cbPE" layoutX="170.0" layoutY="75.0" prefHeight="25.0" prefWidth="377.0" promptText="Seleccione un programa educativo..." />
+                  <ComboBox fx:id="cbParticipantes" layoutX="313.0" layoutY="196.0" onAction="#crearParticipante" prefHeight="25.0" prefWidth="268.0" promptText="Seleccione a los participantes..." />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabOP" text="Objetivo particular">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="703.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Objetivo particular:" AnchorPane.leftAnchor="20.0" />
+                  <TextArea fx:id="txtObjPart" layoutX="20.0" layoutY="34.0" prefHeight="57.0" prefWidth="563.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <TableView fx:id="tbMetas" layoutX="20.0" layoutY="116.0" prefHeight="136.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                    <columns>
+                      <TableColumn fx:id="tbcNumero" editable="false" maxWidth="54.0" minWidth="54.0" prefWidth="54.0" sortable="false" text="Numero" />
+                      <TableColumn fx:id="tbcMeta" maxWidth="1.7976931348623157E308" prefWidth="505.0" text="Meta" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tbActividades" layoutX="20.0" layoutY="294.0" prefHeight="200.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <columns>
+                        <TableColumn fx:id="tcAcciones" prefWidth="209.0" text="ACTIVIDADES/ACCIONES" />
+                        <TableColumn fx:id="tcFecha" minWidth="0.0" prefWidth="144.0" text="FECHA/SEMANA" />
+                        <TableColumn fx:id="tcFormaOperar" minWidth="0.0" prefWidth="206.0" sortType="DESCENDING" text="Forma operar" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="bAgregarOP" layoutX="386.0" layoutY="2.0" mnemonicParsing="false" onAction="#agregarObjetivoParticular" text="Agregar nuevo objetivo particular" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="bAgregarMeta" layoutX="521.0" layoutY="253.0" mnemonicParsing="false" onAction="#agregarMeta" text="Agregar" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="bAgregarActividad" layoutX="521.0" layoutY="604.0" mnemonicParsing="false" onAction="#agregarActividad" text="Agregar" AnchorPane.rightAnchor="20.0" />
+                  <TextField fx:id="tfMeta" layoutX="20.0" layoutY="253.0" prefHeight="25.0" prefWidth="492.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="90.0" />
+                  <TextField fx:id="tfAccionesOP" layoutX="21.0" layoutY="520.0" prefHeight="25.0" prefWidth="493.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="89.0" />
+                  <TextField fx:id="tfFechaSemanaOP" layoutX="21.0" layoutY="562.0" prefHeight="25.0" prefWidth="492.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="89.0" />
+                  <TextField fx:id="tfFormaOperarOP" layoutX="21.0" layoutY="604.0" prefHeight="25.0" prefWidth="490.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="89.0" />
+                  <Label layoutX="21.0" layoutY="503.0" text="Actividades/acciones:" />
+                  <Label layoutX="20.0" layoutY="545.0" text="Fecha/semana:" />
+                  <Label layoutX="21.0" layoutY="587.0" text="Forma Operar:" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tabTema" text="Tema Parcial">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="cbEET" layoutX="16.0" layoutY="41.0" prefHeight="25.0" prefWidth="392.0" promptText="Seleccione la Experiencia Educativa" />
+                  <TextField fx:id="tfPrimer" layoutX="15.0" layoutY="90.0" prefHeight="25.0" prefWidth="393.0" />
+                  <TextField fx:id="tfSegundo" layoutX="15.0" layoutY="142.0" prefHeight="25.0" prefWidth="393.0" />
+                  <TableView fx:id="tbHerramientas" layoutX="14.0" layoutY="201.0" prefHeight="200.0" prefWidth="563.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <columns>
+                        <TableColumn fx:id="tbcNumeroH" maxWidth="40.0" prefWidth="40.0" text="#" />
+                        <TableColumn fx:id="tbcNombreH" prefWidth="527.0" text="Nombre" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="15.0" layoutY="66.0" text="Primer parcial:" />
+                  <Label layoutX="15.0" layoutY="115.0" text="Segundo parcial:" />
+                  <Label layoutX="20.0" layoutY="184.0" text="Herramientas:" />
+                  <Label layoutX="20.0" layoutY="14.0" text="9. TEMAS PARA EXAMENES PARCIAL:" />
+                  <Button fx:id="bAgregarHerramienta" layoutX="521.0" layoutY="401.0" mnemonicParsing="false" onAction="#agregarHerramienta" text="Agregar" AnchorPane.rightAnchor="20.0" />
+                  <TextField fx:id="tfHerramienta" layoutX="20.0" layoutY="401.0" prefHeight="25.0" prefWidth="490.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="90.0" />
+                  <Button fx:id="bAgregarTemas" layoutX="271.0" layoutY="578.0" mnemonicParsing="false" onAction="#agregarTema" text="Agregar" AnchorPane.leftAnchor="271.0" AnchorPane.rightAnchor="270.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabFE" text="Forma de evaluar">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tbFormasEvaluar" layoutX="20.0" layoutY="83.0" prefHeight="179.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <columns>
+                        <TableColumn fx:id="tbcElemento" prefWidth="284.0" text="ELEMENTO" />
+                        <TableColumn fx:id="tbcPorcentaje" prefWidth="274.0" text="PORCENTAJE (total 100%)" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="14.0" text="10. FORMAS DE EVALUAR" AnchorPane.leftAnchor="20.0" />
+                  <ComboBox fx:id="cbEE" layoutX="20.0" layoutY="35.0" prefHeight="25.0" prefWidth="397.0" promptText="Seleccione la Experiencia Educativa" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="183.0" />
+                  <TextField fx:id="tfElemento" layoutX="20.0" layoutY="291.0" prefHeight="25.0" prefWidth="485.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="95.0" />
+                  <TextField fx:id="tfPorcentaje" layoutX="20.0" layoutY="345.0" prefHeight="25.0" prefWidth="484.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="95.0" />
+                  <Label layoutX="20.0" layoutY="274.0" text="Elemento:" />
+                  <Label layoutX="20.0" layoutY="325.0" text="Porcentaje:" />
+                  <Button fx:id="bAgregarForma" layoutX="528.0" layoutY="345.0" mnemonicParsing="false" onAction="#agregarForma" text="Agregar" AnchorPane.rightAnchor="13.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabCrear" text="Crear">
+        <content>
+          <AnchorPane fx:id="TabH" minHeight="0.0" minWidth="0.0" prefHeight="662.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="bCancelar" layoutX="127.0" layoutY="492.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" AnchorPane.leftAnchor="127.0" />
+                  <Button fx:id="bCrear" layoutX="418.0" layoutY="492.0" mnemonicParsing="false" onAction="#crearPlan" text="Crear" AnchorPane.rightAnchor="137.0" />
+                  <Label layoutX="102.0" layoutY="108.0" prefHeight="17.0" prefWidth="398.0" />
+                  <Label layoutX="218.0" layoutY="145.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="200.0" layoutX="27.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="534.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="39.0" />
+                  <Label layoutX="277.0" layoutY="63.0" text="Vo. Bo" />
+                  <Label layoutX="218.0" layoutY="214.0" text="COORDINADOR DE ACADEMIA" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

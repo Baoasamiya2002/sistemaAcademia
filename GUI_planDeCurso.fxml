@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="763.0" prefWidth="1031.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.Controlador">
+  <tabs>
+    <Tab text="Principal">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="587.0">
+               <children>
+                  <TextArea fx:id="txtObjetivo" layoutX="20.0" layoutY="415.0" prefHeight="133.0" prefWidth="893.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Label layoutX="20.0" layoutY="377.0" prefHeight="36.0" prefWidth="133.0" text="Objetivo General:" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="82.0" text="Clave NRC" />
+                  <TextField fx:id="txtEE" editable="false" layoutX="216.0" layoutY="124.0" prefHeight="31.0" prefWidth="242.0" />
+                  <Label layoutX="22.0" layoutY="171.0" text="P. E." />
+                  <TextField fx:id="txtNRC" editable="false" layoutX="216.0" layoutY="77.0" prefHeight="31.0" prefWidth="242.0" />
+                  <Label layoutX="20.0" layoutY="129.0" text="E. E." />
+                  <TextField fx:id="txtPE" editable="false" layoutX="216.0" layoutY="166.0" prefHeight="31.0" prefWidth="240.0" />
+                  <Label layoutX="395.0" layoutY="22.0" text="Plan de curso">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="212.0" text="Bloque" />
+                  <TextField fx:id="txtBloque" editable="false" layoutX="216.0" layoutY="207.0" prefHeight="31.0" prefWidth="52.0" />
+                  <Label layoutX="310.0" layoutY="212.0" text="Sección" />
+                  <TextField fx:id="txtSeccion" editable="false" layoutX="403.0" layoutY="207.0" prefHeight="31.0" prefWidth="54.0" />
+                  <Label layoutX="20.0" layoutY="255.0" text="Académico" />
+                  <TextField fx:id="txtAcademico" editable="false" layoutX="217.0" layoutY="250.0" prefHeight="31.0" prefWidth="243.0" />
+                  <Label layoutX="18.0" layoutY="297.0" text="Periodo" />
+                  <TextField fx:id="txtPeriodo" layoutX="216.0" layoutY="292.0" prefHeight="31.0" prefWidth="245.0" />
+                  <Button fx:id="btnGuardar" layoutX="845.0" layoutY="649.0" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                  <Button fx:id="btnCancelar" layoutX="756.0" layoutY="649.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Unidades">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tablaUnidad" layoutX="16.0" layoutY="64.0" prefHeight="369.0" prefWidth="995.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                    <columns>
+                      <TableColumn fx:id="columnaUnidadU" prefWidth="122.0" text="Unidad" />
+                      <TableColumn fx:id="columnaTemasU" prefWidth="119.0" text="Temas" />
+                        <TableColumn fx:id="columnaFechasU" prefWidth="124.0" text="Fechas" />
+                        <TableColumn fx:id="columnaTareasU" prefWidth="402.0" text="Tareas y prácticas" />
+                        <TableColumn fx:id="columnaTecnicaU" prefWidth="231.0" text="Técnica didactica a utilizar" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnNuevaUnidad" layoutX="630.0" layoutY="662.0" mnemonicParsing="false" onAction="#nuevaUnidad" text="Nueva" />
+                  <Button fx:id="btnEliminarUnidad" layoutX="401.0" layoutY="662.0" mnemonicParsing="false" onAction="#eliminarUnidad" text="Eliminar" />
+                  <Button fx:id="btnAnadirUnidad" layoutX="946.0" layoutY="561.0" mnemonicParsing="false" onAction="#anadirUnidad" text="Añadir" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="btnModificarUnidad" layoutX="516.0" layoutY="662.0" mnemonicParsing="false" onAction="#modificarUnidad" text="Modificar" />
+                  <TextField fx:id="txtUnidadU" layoutX="20.0" layoutY="447.0" prefHeight="31.0" prefWidth="114.0" AnchorPane.leftAnchor="20.0" />
+                  <TextField fx:id="txtTemaU" layoutX="141.0" layoutY="447.0" prefHeight="31.0" prefWidth="131.0" />
+                  <TextField fx:id="txtFechasU" layoutX="278.0" layoutY="447.0" prefHeight="31.0" prefWidth="105.0" />
+                  <TextField fx:id="txtTareaU" layoutX="391.0" layoutY="447.0" prefHeight="31.0" prefWidth="386.0" />
+                  <TextField fx:id="txtTecnicaU" layoutX="784.0" layoutY="447.0" prefHeight="31.0" prefWidth="229.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Bibliografía">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tablaLibros" layoutX="21.0" layoutY="95.0" prefHeight="229.0" prefWidth="991.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0">
+                    <columns>
+                      <TableColumn fx:id="columnaAutor" prefWidth="256.0" text="Autor(es)" />
+                      <TableColumn fx:id="columnaTitulo" minWidth="0.0" prefWidth="420.0" text="Título del libro" />
+                        <TableColumn fx:id="columnaEditorial" prefWidth="196.0" text="Editorial" />
+                        <TableColumn fx:id="columnaAnno" prefWidth="118.0" text="Año" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnNuevoLibro" layoutX="614.0" layoutY="610.0" mnemonicParsing="false" onAction="#nuevoLibro" text="Nuevo libro" />
+                  <Button fx:id="btnEliminarLibro" layoutX="361.0" layoutY="610.0" mnemonicParsing="false" onAction="#eliminarLibro" text="Eliminar" />
+                  <TextField fx:id="txtAutor" layoutX="21.0" layoutY="347.0" prefHeight="31.0" prefWidth="247.0" />
+                  <TextField fx:id="txtTitulo" layoutX="278.0" layoutY="347.0" prefHeight="31.0" prefWidth="415.0" />
+                  <TextField fx:id="txtEditorial" layoutX="700.0" layoutY="347.0" />
+                  <TextField fx:id="txtAnno" layoutX="895.0" layoutY="347.0" prefHeight="31.0" prefWidth="122.0" />
+                  <Button fx:id="btnAnadirLibro" layoutX="924.0" layoutY="401.0" mnemonicParsing="false" onAction="#anadirLibro" text="Añadir" />
+                  <Button fx:id="btnModificarLibro" layoutX="484.0" layoutY="610.0" mnemonicParsing="false" onAction="#modificarLibro" text="Modificar" />
+                  <Label fx:id="labelLibroIncompleto" layoutX="475.0" layoutY="508.0" text="Hay campos vacios" visible="false" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Calendario de evaluación">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tablaCriterio" layoutX="15.0" layoutY="62.0" prefHeight="323.0" prefWidth="991.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                    <columns>
+                      <TableColumn fx:id="columnaUnidad" prefWidth="102.0" text="Unidad" />
+                      <TableColumn fx:id="columnaFechas" prefWidth="101.0" text="Fechas" />
+                        <TableColumn fx:id="columnaCriterio" prefWidth="509.0" text="Criterio de Evaluación" />
+                        <TableColumn fx:id="columnaInstrumento" prefWidth="185.0" text="Instrumento" />
+                        <TableColumn fx:id="columnaPorcentaje" prefWidth="93.0" text="\%" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnNuevoCriterio" layoutX="626.0" layoutY="605.0" mnemonicParsing="false" onAction="#nuevoCriterio" text="Nuevo criterio" />
+                  <TextField fx:id="txtUnidad" layoutX="20.0" layoutY="407.0" prefHeight="31.0" prefWidth="76.0" />
+                  <TextField fx:id="txtFechas" layoutX="106.0" layoutY="407.0" prefHeight="31.0" prefWidth="134.0" />
+                  <TextField fx:id="txtPorcentaje" layoutX="920.0" layoutY="407.0" prefHeight="31.0" prefWidth="91.0" />
+                  <Button fx:id="btnAnadirCriterio" layoutX="933.0" layoutY="467.0" mnemonicParsing="false" onAction="#anadirCriterio" text="Añadir" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="btnEliminarCriterio" layoutX="373.0" layoutY="605.0" mnemonicParsing="false" onAction="#eliminarCriterio" text="Eliminar" />
+                  <Button fx:id="btnModificarCriterio" layoutX="483.0" layoutY="605.0" mnemonicParsing="false" onAction="#modificarCriterio" text="Modificar" />
+                  <TextField fx:id="txtCriterio" layoutX="247.0" layoutY="407.0" prefHeight="31.0" prefWidth="498.0" />
+                  <TextField fx:id="txtInstrumento" layoutX="749.0" layoutY="407.0" prefHeight="31.0" prefWidth="165.0" />
+                  <Label fx:id="lbPasa100" layoutX="685.0" layoutY="520.0" text="No es posible añadir ya que sobrepasa el 100%" textFill="#ff0404" visible="false" AnchorPane.rightAnchor="20.0" />
+                  <Label fx:id="lbPorcentaje" layoutX="870.0" layoutY="584.0" text="Porcentaje incorrecto" visible="false" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
