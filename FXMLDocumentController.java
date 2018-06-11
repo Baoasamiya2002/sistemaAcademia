@@ -496,7 +496,7 @@ public class FXMLDocumentController implements Initializable {
         try{
             porcentaje = Integer.parseInt(tfPorcentaje.getText());
             
-        }catch(Exception e) {
+        }catch(NumberFormatException e) {
             porcentaje = -1;
         }
         if (porcentaje <= 0 || porcentaje >= 100) {
